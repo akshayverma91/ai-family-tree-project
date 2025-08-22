@@ -12,7 +12,8 @@ export const sampleFamilyData: FamilyMember[] = [
     spouse: '2',
     children: ['3', '4'],
     isAlive: true,
-    avatar: '👨'
+    avatar: '👨',
+    lifeStories: ['story-1', 'story-2']
   },
   {
     id: '2',
@@ -25,7 +26,8 @@ export const sampleFamilyData: FamilyMember[] = [
     spouse: '1',
     children: ['3', '4'],
     isAlive: true,
-    avatar: '👩'
+    avatar: '👩',
+    lifeStories: ['story-3', 'story-4']
   },
   {
     id: '3',
@@ -39,7 +41,8 @@ export const sampleFamilyData: FamilyMember[] = [
     spouse: '5',
     children: ['6', '7'],
     isAlive: true,
-    avatar: '👨'
+    avatar: '👨',
+    lifeStories: ['story-5', 'story-6']
   },
   {
     id: '4',
@@ -53,7 +56,8 @@ export const sampleFamilyData: FamilyMember[] = [
     spouse: '8',
     children: ['9'],
     isAlive: true,
-    avatar: '👩'
+    avatar: '👩',
+    lifeStories: ['story-7', 'story-8']
   },
   {
     id: '5',

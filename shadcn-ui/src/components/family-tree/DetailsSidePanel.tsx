@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { FamilyMember } from '@/types/family';
-import { Calendar, MapPin, Briefcase, Heart, Users, Edit } from 'lucide-react';
+import { LifeStoriesModal } from './LifeStoriesModal';
+import { Calendar, MapPin, Briefcase, Heart, Users, Edit, BookOpen } from 'lucide-react';
 
 interface DetailsSidePanelProps {
   member: FamilyMember | null;
@@ -19,6 +20,8 @@ export const DetailsSidePanel: React.FC<DetailsSidePanelProps> = ({
   onClose,
   familyMembers
 }) => {
+  const [lifeStoriesOpen, setLifeStoriesOpen] = useState(false);
+  
   if (!member) return null;
 
   const getRelatedMember = (id: string) => {
@@ -50,10 +53,20 @@ export const DetailsSidePanel: React.FC<DetailsSidePanelProps> = ({
                 </SheetDescription>
               )}
             </div>
-            <Button variant="outline" size="sm">
-              <Edit className="h-4 w-4 mr-2" />
-              Edit
-            </Button>
+            <div className="flex space-x-2">
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => setLifeStoriesOpen(true)}
+              >
+                <BookOpen className="h-4 w-4 mr-2" />
+                Life Stories ({member.lifeStories?.length || 0})
+              </Button>
+              <Button variant="outline" size="sm">
+                <Edit className="h-4 w-4 mr-2" />
+                Edit
+              </Button>
+            </div>
           </div>
         </SheetHeader>
 
@@ -193,6 +206,12 @@ export const DetailsSidePanel: React.FC<DetailsSidePanelProps> = ({
           </div>
         </div>
       </SheetContent>
+      
+      <LifeStoriesModal
+        member={member}
+        isOpen={lifeStoriesOpen}
+        onClose={() => setLifeStoriesOpen(false)}
+      />
     </Sheet>
   );
 };

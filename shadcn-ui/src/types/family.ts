@@ -13,6 +13,7 @@ export interface FamilyMember {
   parents?: string[];
   relationship?: string;
   isAlive: boolean;
+  lifeStories?: string[]; // Array of life story IDs
 }
 
 export interface TreeNode {

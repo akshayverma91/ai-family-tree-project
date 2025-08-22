@@ -1,0 +1,120 @@
+import { FamilyMember } from '@/types/family';
+
+export const sampleFamilyData: FamilyMember[] = [
+  {
+    id: '1',
+    name: 'John Smith',
+    birthDate: '1950-03-15',
+    gender: 'male',
+    occupation: 'Engineer',
+    location: 'New York, USA',
+    bio: 'Retired mechanical engineer with a passion for woodworking.',
+    spouse: '2',
+    children: ['3', '4'],
+    isAlive: true,
+    avatar: '👨'
+  },
+  {
+    id: '2',
+    name: 'Mary Smith',
+    birthDate: '1952-07-22',
+    gender: 'female',
+    occupation: 'Teacher',
+    location: 'New York, USA',
+    bio: 'Elementary school teacher for 35 years.',
+    spouse: '1',
+    children: ['3', '4'],
+    isAlive: true,
+    avatar: '👩'
+  },
+  {
+    id: '3',
+    name: 'Michael Smith',
+    birthDate: '1975-12-08',
+    gender: 'male',
+    occupation: 'Software Developer',
+    location: 'San Francisco, USA',
+    bio: 'Full-stack developer working in tech startups.',
+    parents: ['1', '2'],
+    spouse: '5',
+    children: ['6', '7'],
+    isAlive: true,
+    avatar: '👨'
+  },
+  {
+    id: '4',
+    name: 'Sarah Johnson',
+    birthDate: '1978-04-14',
+    gender: 'female',
+    occupation: 'Doctor',
+    location: 'Boston, USA',
+    bio: 'Pediatrician at Boston Children\'s Hospital.',
+    parents: ['1', '2'],
+    spouse: '8',
+    children: ['9'],
+    isAlive: true,
+    avatar: '👩'
+  },
+  {
+    id: '5',
+    name: 'Jennifer Smith',
+    birthDate: '1977-09-30',
+    gender: 'female',
+    occupation: 'Graphic Designer',
+    location: 'San Francisco, USA',
+    bio: 'Creative director at a digital agency.',
+    spouse: '3',
+    children: ['6', '7'],
+    isAlive: true,
+    avatar: '👩'
+  },
+  {
+    id: '6',
+    name: 'Emma Smith',
+    birthDate: '2005-06-12',
+    gender: 'female',
+    occupation: 'Student',
+    location: 'San Francisco, USA',
+    bio: 'High school student interested in marine biology.',
+    parents: ['3', '5'],
+    isAlive: true,
+    avatar: '👧'
+  },
+  {
+    id: '7',
+    name: 'Jake Smith',
+    birthDate: '2008-01-25',
+    gender: 'male',
+    occupation: 'Student',
+    location: 'San Francisco, USA',
+    bio: 'Middle school student who loves soccer and video games.',
+    parents: ['3', '5'],
+    isAlive: true,
+    avatar: '👦'
+  },
+  {
+    id: '8',
+    name: 'David Johnson',
+    birthDate: '1976-11-03',
+    gender: 'male',
+    occupation: 'Lawyer',
+    location: 'Boston, USA',
+    bio: 'Corporate lawyer specializing in healthcare law.',
+    spouse: '4',
+    children: ['9'],
+    isAlive: true,
+    avatar: '👨'
+  },
+  {
+    id: '9',
+    name: 'Olivia Johnson',
+    birthDate: '2010-08-18',
+    gender: 'female',
+    occupation: 'Student',
+    location: 'Boston, USA',
+    bio: 'Elementary school student who loves reading and drawing.',
+    parents: ['4', '8'],
+    isAlive: true,
+    avatar: '👧'
+  }
+];

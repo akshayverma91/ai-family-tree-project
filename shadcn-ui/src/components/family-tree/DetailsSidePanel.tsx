@@ -41,7 +41,7 @@ export const DetailsSidePanel: React.FC<DetailsSidePanelProps> = ({
 
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
-      <SheetContent className="w-[400px] sm:w-[540px] overflow-y-auto">
+      <SheetContent className="w-[450px] sm:w-[600px] overflow-y-auto">
         <SheetHeader className="space-y-4">
           <div className="flex items-center space-x-4">
             <span className="text-4xl">{member.avatar || '👤'}</span>
@@ -53,16 +53,17 @@ export const DetailsSidePanel: React.FC<DetailsSidePanelProps> = ({
                 </SheetDescription>
               )}
             </div>
-            <div className="flex space-x-2">
+            <div className="flex flex-col sm:flex-row gap-2">
               <Button 
                 variant="outline" 
                 size="sm"
                 onClick={() => setLifeStoriesOpen(true)}
+                className="flex-1 sm:flex-none"
               >
                 <BookOpen className="h-4 w-4 mr-2" />
-                Life Stories ({member.lifeStories?.length || 0})
+                Stories ({member.lifeStories?.length || 0})
               </Button>
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm" className="flex-1 sm:flex-none">
                 <Edit className="h-4 w-4 mr-2" />
                 Edit
               </Button>

@@ -5,6 +5,7 @@ import { viteSourceLocator } from "@metagptx/vite-plugin-source-locator";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: '/ai-family-tree-project/',
   plugins: [
     viteSourceLocator({
       prefix: "mgx",

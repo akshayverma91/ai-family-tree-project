@@ -13,7 +13,8 @@ export const sampleFamilyData: FamilyMember[] = [
     children: ['3', '4'],
     isAlive: true,
     avatar: '👨',
-    lifeStories: ['story-1', 'story-2']
+    lifeStories: ['story-1', 'story-2'],
+    healthRecords: ['health-1', 'health-2']
   },
   {
     id: '2',
@@ -27,7 +28,8 @@ export const sampleFamilyData: FamilyMember[] = [
     children: ['3', '4'],
     isAlive: true,
     avatar: '👩',
-    lifeStories: ['story-3', 'story-4']
+    lifeStories: ['story-3', 'story-4'],
+    healthRecords: ['health-3', 'health-4']
   },
   {
     id: '3',
@@ -42,7 +44,8 @@ export const sampleFamilyData: FamilyMember[] = [
     children: ['6', '7'],
     isAlive: true,
     avatar: '👨',
-    lifeStories: ['story-5', 'story-6']
+    lifeStories: ['story-5', 'story-6'],
+    healthRecords: ['health-5', 'health-6']
   },
   {
     id: '4',

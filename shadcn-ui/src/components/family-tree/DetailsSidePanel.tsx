@@ -5,7 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { FamilyMember } from '@/types/family';
 import { LifeStoriesModal } from './LifeStoriesModal';
-import { Calendar, MapPin, Briefcase, Heart, Users, Edit, BookOpen } from 'lucide-react';
+import { HealthRecordsModal } from './HealthRecordsModal';
+import { Calendar, MapPin, Briefcase, Heart, Users, Edit, BookOpen, Stethoscope } from 'lucide-react';
 
 interface DetailsSidePanelProps {
   member: FamilyMember | null;
@@ -21,6 +22,7 @@ export const DetailsSidePanel: React.FC<DetailsSidePanelProps> = ({
   familyMembers
 }) => {
   const [lifeStoriesOpen, setLifeStoriesOpen] = useState(false);
+  const [healthRecordsOpen, setHealthRecordsOpen] = useState(false);
   
   if (!member) return null;
 
@@ -53,19 +55,30 @@ export const DetailsSidePanel: React.FC<DetailsSidePanelProps> = ({
                 </SheetDescription>
               )}
             </div>
-            <div className="flex flex-col sm:flex-row gap-2">
-              <Button 
-                variant="outline" 
-                size="sm"
-                onClick={() => setLifeStoriesOpen(true)}
-                className="flex-1 sm:flex-none"
-              >
-                <BookOpen className="h-4 w-4 mr-2" />
-                Stories ({member.lifeStories?.length || 0})
-              </Button>
-              <Button variant="outline" size="sm" className="flex-1 sm:flex-none">
+            <div className="flex flex-col gap-2">
+              <div className="flex gap-2">
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  onClick={() => setLifeStoriesOpen(true)}
+                  className="flex-1"
+                >
+                  <BookOpen className="h-4 w-4 mr-2" />
+                  Stories ({member.lifeStories?.length || 0})
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  onClick={() => setHealthRecordsOpen(true)}
+                  className="flex-1"
+                >
+                  <Stethoscope className="h-4 w-4 mr-2" />
+                  Health ({member.healthRecords?.length || 0})
+                </Button>
+              </div>
+              <Button variant="outline" size="sm" className="w-full">
                 <Edit className="h-4 w-4 mr-2" />
-                Edit
+                Edit Profile
               </Button>
             </div>
           </div>
@@ -212,6 +225,12 @@ export const DetailsSidePanel: React.FC<DetailsSidePanelProps> = ({
         member={member}
         isOpen={lifeStoriesOpen}
         onClose={() => setLifeStoriesOpen(false)}
+      />
+      
+      <HealthRecordsModal
+        member={member}
+        isOpen={healthRecordsOpen}
+        onClose={() => setHealthRecordsOpen(false)}
       />
     </Sheet>
   );
